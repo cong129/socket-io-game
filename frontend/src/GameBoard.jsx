@@ -9,6 +9,8 @@ const GameBoard = (props) => {
   const SCREEN_WIDTH = 700;
   const socket = useRef();
   const MAX_TIME = 600;
+  const socketURL =
+    process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4000';
 
   let x;
   let y;
@@ -21,7 +23,7 @@ const GameBoard = (props) => {
 
   function setGame() {
     if (inFlag !== true) {
-      socket.current = io(`http://localhost:${PORT}`);
+      socket.current = io(socketURL);
 
       socket.current?.emit('joinGame', {
         name: props.name,

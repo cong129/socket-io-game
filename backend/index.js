@@ -7,6 +7,8 @@ const { Server } = require('socket.io');
 const knex = require('./data/index');
 const FPS = 60;
 const PORT = process.env.PORT || 4000;
+const allowedOrigin =
+  process.env.RENDER_EXTERNAL_HOSTNAME || 'http://localhost:5173';
 
 app.use(cors());
 app.use(express.json());
@@ -65,7 +67,7 @@ const gameResult = {
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: allowedOrigin,
   },
 });
 
