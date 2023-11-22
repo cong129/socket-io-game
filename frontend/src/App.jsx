@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 import GameBoard from './GameBoard.jsx';
 import { ShowTable } from './ShowTable.jsx';
 
+const PORT = process.env.PORT || 4000;
+
 export const App = () => {
   const color = useRef();
   const name = useRef();
@@ -12,7 +14,8 @@ export const App = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:4000/history');
+      // const response = await fetch('http://localhost:4000/history');
+      const response = await fetch('/history');
       const result = await response.json(); // JSON 형식으로 파싱합니다.
       console.log(result); // 실제 데이터 확인
       setData(result);

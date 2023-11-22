@@ -21,7 +21,7 @@ const GameBoard = (props) => {
 
   function setGame() {
     if (inFlag !== true) {
-      socket.current = io('http://localhost:4000');
+      socket.current = io(`http://localhost:${PORT}`);
 
       socket.current?.emit('joinGame', {
         name: props.name,
