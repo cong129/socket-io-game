@@ -10,8 +10,8 @@
     "makeMig": "knex migrate:make",
     "migrate": "npx knex migrate:latest",
     "seeds": "npx knex seed:run",
-    "build": "npm install && export NODE_ENV=production && npm run migrate-latest && npm run seed-data",
-    "git": "git add . && npx co-commit"
+    "build": "npm install && export NODE_ENV=production && npm run migrate && npm run seeds",
+    "git": "git add . &&  git commit -m"
   },
   "author": "",
   "license": "ISC",
