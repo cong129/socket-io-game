@@ -2,8 +2,6 @@ import { useRef, useState } from 'react';
 import GameBoard from './GameBoard.jsx';
 import { ShowTable } from './ShowTable.jsx';
 
-const PORT = process.env.PORT || 4000;
-
 export const App = () => {
   const color = useRef();
   const name = useRef();

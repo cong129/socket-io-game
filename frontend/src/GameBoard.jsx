@@ -73,6 +73,7 @@ const GameBoard = (props) => {
         p5.clear();
         p5.fill(255);
         p5.textSize(32);
+        p5.stroke(0);
         p5.textAlign(p5.CENTER, p5.CENTER);
         p5.text('Waiting Opponent!', p5.width / 2, p5.height / 2);
       } else if ((gameStartFlag.current === true) & (gameFlag == false)) {
@@ -142,6 +143,7 @@ const GameBoard = (props) => {
       console.log('');
       p5.fill(255);
       p5.textSize(75);
+      p5.stroke(0);
       p5.textAlign(p5.CENTER, p5.CENTER);
       p5.text(
         `Winner : \n${gameResult.current.winner}`,
@@ -152,6 +154,7 @@ const GameBoard = (props) => {
 
       p5.fill(200);
       p5.textSize(35);
+      p5.stroke(0);
       p5.textAlign(p5.CENTER, p5.CENTER);
       p5.text(
         `loser : \n${gameResult.current.loser}`,
