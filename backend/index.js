@@ -6,10 +6,11 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const knex = require('./data/index');
 const FPS = 60;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/', express.static(__dirname + '/dist'));
 app.get('/history', async (req, res) => {
   const data = await knex.select('*').from('game_result');
   console.log('req coming?');
@@ -126,6 +127,6 @@ setInterval(() => {
   }
 }, 1000 / FPS);
 
-server.listen(4000, () => {
+server.listen(PORT, () => {
   console.log('listening on *:4000');
 });

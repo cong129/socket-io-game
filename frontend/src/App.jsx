@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import GameBoard from './GameBoard.jsx';
 
 export const App = () => {

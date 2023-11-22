@@ -1,6 +1,5 @@
-import React, { createElement, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Sketch from 'react-p5';
-import P5 from 'p5/lib/p5.min';
 import { io, Socket } from 'socket.io-client';
 
 const GameBoard = (props) => {
