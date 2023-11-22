@@ -4,18 +4,18 @@ import { io, Socket } from 'socket.io-client';
 
 const GameBoard = (props) => {
   // REACT STUFF
-  let x;
-  let y;
   const PLAYER_DIAMETER = 50;
   const SCREEN_HEIGHT = 600;
   const SCREEN_WIDTH = 700;
   const socket = useRef();
   const MAX_TIME = 600;
+
+  let x;
+  let y;
   let inFlag = false; //useEffectが２回読まれるの防ぐ
   let gameFlag = useRef(false); //ゲームが始まる時を検知するためのフラグ
   let gameStartFlag = useRef(false); //ゲームを開始するためのフラグ。trueになるとえが書き始め
-  let timer = useRef(0); //
-  // let [gameResult, setGameResult] = useState(); //
+  let timer = useRef(0);
   let gameResult = useRef();
   let gameState = { players: [], colors: [], positions: [] };
 
@@ -165,7 +165,8 @@ const GameBoard = (props) => {
 
   return (
     <div>
-      <Sketch setup={setup} draw={draw} />;
+      <h2>🌈Welcome to Battle Field! Fight!✎ᝰ.</h2>
+      <Sketch setup={setup} draw={draw} />
     </div>
   );
 };

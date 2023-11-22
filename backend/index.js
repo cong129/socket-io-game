@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
+const cors = require('cors');
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require('socket.io');
@@ -128,5 +128,5 @@ setInterval(() => {
 }, 1000 / FPS);
 
 server.listen(PORT, () => {
-  console.log('listening on *:4000');
+  console.log(`listening on *:${PORT}`);
 });
